@@ -112,11 +112,30 @@ gap:20px;
 }
 
 .skill-box{
-background:#1e293b;
-padding:25px;
-text-align:center;
-border-radius:15px;
-transition:.3s;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 25px;
+    text-align: center;
+    border-radius: 18px;
+    transition: all 0.4s ease;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.skill-box:hover{
+    transform: translateY(-10px) scale(1.05);
+    background: linear-gradient(
+        135deg,
+        #00c6ff,
+        #0072ff,
+        #7b2ff7
+    );
+    box-shadow:
+        0 10px 25px rgba(0,198,255,0.4),
+        0 0 30px rgba(123,47,247,0.5);
+    color: white;
 }
 
 .skill-box:hover{
@@ -153,17 +172,7 @@ background:#020617;
 color:#94a3b8;
 }
 
-.cursor{
-position:fixed;
-width:20px;
-height:20px;
-background:#38bdf8;
-border-radius:50%;
-pointer-events:none;
-transform:translate(-50%,-50%);
-box-shadow:0 0 20px #38bdf8;
-z-index:9999;
-}
+
 
 @media(max-width:768px){
 
@@ -187,7 +196,7 @@ height:220px;
 
 <body>
 
-<div class="cursor"></div>
+
 
 <header>
 
@@ -280,6 +289,9 @@ Engineering Student
 <p>Email: jeevithajeevi2707@gmail.com</p>
 <br>
 <a class="btn" href="mailto:jeevithajeevi2707@gmail.com">Send Email</a>
+    <p>Linkdin: https://www.linkedin.com/in/jeevitha-r-60754b333</p>
+<br>
+<a class="btn" href="https://www.linkedin.com/in/jeevitha-r-60754b333">Linkdin</a>
 </div>
 
 </section>
@@ -288,16 +300,6 @@ Engineering Student
 Designed & Developed by Jeevitha 💙
 </footer>
 
-<script>
-
-const cursor=document.querySelector(".cursor");
-
-document.addEventListener("mousemove",(e)=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-});
-
-</script>
 
 </body>
 </html>
