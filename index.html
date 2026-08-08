@@ -10,33 +10,43 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:#0f172a;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
     color:white;
 }
 
 header{
     text-align:center;
-    padding:80px 20px;
+    padding:60px 20px;
     background:linear-gradient(135deg,#2563eb,#7c3aed);
+}
+
+.profile-img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:5px solid white;
+    object-fit:cover;
+    margin-bottom:20px;
 }
 
 header h1{
     font-size:3rem;
-    margin-bottom:10px;
 }
 
 header p{
+    margin-top:10px;
     font-size:1.1rem;
 }
 
 .container{
     width:90%;
-    max-width:1000px;
+    max-width:1100px;
     margin:auto;
+    padding:20px;
 }
 
 .card{
@@ -44,6 +54,12 @@ header p{
     padding:25px;
     margin:20px 0;
     border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 h2{
@@ -52,13 +68,12 @@ h2{
 }
 
 .skill{
-    margin-bottom:15px;
+    margin:15px 0;
 }
 
 .bar{
-    width:100%;
-    height:12px;
     background:#334155;
+    height:12px;
     border-radius:20px;
 }
 
@@ -77,24 +92,34 @@ h2{
 
 .btn{
     display:inline-block;
+    margin:10px 5px;
     padding:12px 20px;
     background:#2563eb;
     color:white;
     text-decoration:none;
     border-radius:8px;
-    margin-top:10px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
 }
 
 footer{
     text-align:center;
     padding:20px;
+    margin-top:30px;
     background:#020617;
-    margin-top:20px;
 }
 
 @media(max-width:768px){
     header h1{
         font-size:2rem;
+    }
+
+    .profile-img{
+        width:140px;
+        height:140px;
     }
 }
 </style>
@@ -103,97 +128,112 @@ footer{
 <body>
 
 <header>
+
+    <!-- Photo -->
+    <img src="profile.jpg" alt="Jeevitha" class="profile-img">
+
     <h1>Jeevitha</h1>
+
     <p>B.Tech Information Technology Student</p>
+
     <p>Web Developer | Designer | Founder of Sajeex</p>
+
 </header>
 
 <div class="container">
 
-    <div class="card">
-        <h2>About Me</h2>
-        <p>
-            Hi, I'm Jeevitha, a B.Tech Information Technology student.
-            I am passionate about Web Development, AI, Design and Technology.
-            My goal is to build innovative projects and grow Sajeex into a successful technology brand.
-        </p>
-    </div>
+<div class="card">
+<h2>About Me</h2>
 
-    <div class="card">
-        <h2>Skills</h2>
+<p>
+Hi, I'm Jeevitha, a passionate Information Technology student interested in Web Development, AI, Design and Technology. My goal is to build innovative solutions and grow Sajeex into a successful technology brand.
+</p>
 
-        <div class="skill">
-            <p>HTML</p>
-            <div class="bar"><div class="progress" style="width:85%"></div></div>
-        </div>
+</div>
 
-        <div class="skill">
-            <p>CSS</p>
-            <div class="bar"><div class="progress" style="width:80%"></div></div>
-        </div>
+<div class="card">
 
-        <div class="skill">
-            <p>JavaScript</p>
-            <div class="bar"><div class="progress" style="width:75%"></div></div>
-        </div>
+<h2>Skills</h2>
 
-        <div class="skill">
-            <p>React.js</p>
-            <div class="bar"><div class="progress" style="width:70%"></div></div>
-        </div>
+<div class="skill">
+<p>HTML</p>
 
-        <div class="skill">
-            <p>Node.js</p>
-            <div class="bar"><div class="progress" style="width:65%"></div></div>
-        </div>
+</div>
 
-        <div class="skill">
-            <p>GitHub</p>
-            <div class="bar"><div class="progress" style="width:80%"></div></div>
-        </div>
+<div class="skill">
+<p>CSS</p>
 
-        <div class="skill">
-            <p>Python (Learning)</p>
-            <div class="bar"><div class="progress" style="width:40%"></div></div>
-        </div>
+</div>
 
-    </div>
+<div class="skill">
+<p>JavaScript</p>
 
-    <div class="card">
-        <h2>Projects</h2>
+</div>
 
-        <div class="project">
-            <h3>Portfolio Website</h3>
-            <p>Personal portfolio website created using HTML, CSS and JavaScript.</p>
-        </div>
+<div class="skill">
+<p>React.js</p>
 
-        <div class="project">
-            <h3>SafeNest AI</h3>
-            <p>AI-powered women's safety smartwatch project with emergency alerts and GPS tracking.</p>
-        </div>
+</div>
 
-    </div>
+<div class="skill">
+<p>Node.js</p>
 
-    <div class="card">
-        <h2>Education</h2>
-        <p>B.Tech Information Technology</p>
-        <p>Currently pursuing Engineering</p>
-    </div>
+</div>
 
-    <div class="card">
-        <h2>Contact</h2>
+<div class="skill">
+<p>Git & GitHub</p>
 
-        <p>Email: jeevithajeevi2707@gmail.com</p>
+</div>
 
-        <a class="btn" href="mailto:yourgmail@gmail.com">
-            Contact Me
-        </a>
-    </div>
+<div class="skill">
+<p>Python </p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Projects</h2>
+
+
+
+<div class="project">
+<h3>SafeNest AI</h3>
+<p>AI-powered women safety smartwatch with emergency alerts and GPS tracking.</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Education</h2>
+
+<p>B.Tech Information Technology</p>
+<p>Currently Pursuing Engineering</p>
+
+</div>
+
+<div class="card">
+
+<h2>Connect With Me</h2>
+
+<a class="btn" href="mailto:jeevithajeevi2707@gmail.com">Email</a>
+
+
+
+<a class="btn" href="#">LinkedIn</a>
+
+
+
+</div>
 
 </div>
 
 <footer>
-    © Learning | Building | Growing
+
+<p>Designed & Developed by Jeevitha 💻</p>
+
 </footer>
 
 <script>
