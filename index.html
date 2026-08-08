@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +8,7 @@
     <title>Jeevitha | Portfolio</title>
 
     <style>
+
         /* ===== RESET ===== */
         * {
             margin: 0;
@@ -21,170 +22,374 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f4f7fb;
-            color: #222;
-            line-height: 1.6;
+            color: #ffffff;
+
+            /* Colorful Background */
+            background:
+                radial-gradient(circle at top left, #7c3aed 0%, transparent 35%),
+                radial-gradient(circle at top right, #06b6d4 0%, transparent 35%),
+                linear-gradient(135deg, #090014, #16002b, #001c2b);
+
+            min-height: 100vh;
         }
 
+
         /* ===== HEADER ===== */
+
         header {
-            background: linear-gradient(135deg, #141e30, #243b55);
-            color: white;
             text-align: center;
-            padding: 70px 20px;
+            padding: 80px 20px 60px;
         }
 
         header h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-size: 55px;
+            font-weight: 800;
+
+            background: linear-gradient(
+                90deg,
+                #00eaff,
+                #a855f7,
+                #ff4ecd
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            letter-spacing: 2px;
         }
 
         header p {
-            font-size: 19px;
-            opacity: 0.9;
+            margin-top: 12px;
+            font-size: 20px;
+            color: #d8d8e8;
         }
 
+
         /* ===== COMMON SECTION ===== */
+
         section {
             width: 90%;
-            max-width: 900px;
+            max-width: 950px;
             margin: auto;
-            padding: 55px 0;
+            padding: 50px 0;
         }
 
         section h2 {
             text-align: center;
-            font-size: 30px;
             margin-bottom: 30px;
-            color: #1d3557;
+
+            font-size: 32px;
+
+            background: linear-gradient(
+                90deg,
+                #00eaff,
+                #c084fc,
+                #ff4ecd
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
+
         /* ===== ABOUT ===== */
+
         .about-box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+            background: rgba(255, 255, 255, 0.08);
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            backdrop-filter: blur(15px);
+
+            padding: 35px;
+
+            border-radius: 20px;
+
             text-align: center;
+
+            box-shadow:
+                0 0 30px rgba(124, 58, 237, 0.25);
+
+            transition: 0.4s;
+        }
+
+        .about-box:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 0 40px rgba(6, 182, 212, 0.35);
         }
 
         .about-box p {
-            color: #555;
+            color: #ddd;
             font-size: 17px;
+            line-height: 1.8;
         }
 
+
         /* ===== SKILLS ===== */
+
         .skill-box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+            background: rgba(255, 255, 255, 0.07);
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            backdrop-filter: blur(15px);
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 0 30px rgba(168, 85, 247, 0.2);
         }
+
 
         .skill {
             display: flex;
             justify-content: space-between;
+
             margin-top: 20px;
-            margin-bottom: 7px;
-            font-weight: 600;
+            margin-bottom: 8px;
+
+            color: #ffffff;
+
+            font-weight: bold;
         }
 
+
         .bar {
+
             width: 100%;
-            height: 12px;
-            background: #e2e6ec;
+            height: 13px;
+
+            background: rgba(255,255,255,0.12);
+
             border-radius: 20px;
+
             overflow: hidden;
         }
 
+
         .progress {
+
             height: 100%;
-            background: linear-gradient(90deg, #2563eb, #7c3aed);
+
             border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00eaff,
+                    #7c3aed,
+                    #ff4ecd
+                );
+
+            box-shadow:
+                0 0 12px rgba(0, 234, 255, 0.7);
+
+            animation: progressAnimation 2s ease;
         }
 
+
+        @keyframes progressAnimation {
+
+            from {
+                width: 0;
+            }
+
+        }
+
+
         /* ===== PROJECTS ===== */
+
         .project-container {
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 25px;
         }
 
+
         .project {
-            background: white;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(124,58,237,0.18),
+                    rgba(6,182,212,0.12)
+                );
+
+            border: 1px solid
+                rgba(255,255,255,0.15);
+
+            backdrop-filter: blur(15px);
+
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            transition: 0.3s;
+
+            border-radius: 20px;
+
+            transition: 0.4s;
+
+            box-shadow:
+                0 0 25px rgba(124,58,237,0.15);
         }
+
 
         .project:hover {
-            transform: translateY(-7px);
+
+            transform:
+                translateY(-10px)
+                scale(1.02);
+
+            box-shadow:
+                0 0 35px
+                rgba(0,234,255,0.35);
         }
+
 
         .project h3 {
-            color: #2563eb;
-            margin-bottom: 10px;
-            font-size: 21px;
+
+            font-size: 22px;
+
+            margin-bottom: 12px;
+
+            color: #00eaff;
         }
+
 
         .project p {
-            color: #666;
+
+            color: #d6d6df;
+
+            line-height: 1.7;
         }
 
+
         /* ===== CONTACT ===== */
+
         .contact {
+
             text-align: center;
         }
 
+
         .email {
-            font-size: 17px;
-            margin-bottom: 20px;
-            color: #555;
+
+            font-size: 18px;
+
+            color: #ddd;
+
+            margin-bottom: 25px;
         }
 
+
         .contact button {
+
+            padding:
+                14px 32px;
+
             border: none;
-            padding: 13px 28px;
-            background: linear-gradient(90deg, #2563eb, #7c3aed);
-            color: white;
-            font-size: 16px;
+
             border-radius: 30px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            color: white;
+
             cursor: pointer;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #06b6d4,
+                    #7c3aed,
+                    #ec4899
+                );
+
+            box-shadow:
+                0 0 20px
+                rgba(124,58,237,0.5);
+
             transition: 0.3s;
         }
 
+
         .contact button:hover {
-            transform: scale(1.05);
+
+            transform:
+                translateY(-3px)
+                scale(1.05);
+
+            box-shadow:
+                0 0 30px
+                rgba(236,72,153,0.7);
         }
+
 
         /* ===== DREAM STARTUP ===== */
+
         .dream-brand {
+
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 20px;
-            background: #141e30;
-            color: white;
+
+            padding: 45px 20px;
+
+            margin-top: 40px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            background:
+                rgba(0,0,0,0.25);
         }
+
 
         .dream-brand h3 {
-            font-size: 22px;
-            letter-spacing: 4px;
-            margin-bottom: 8px;
+
+            font-size: 23px;
+
+            letter-spacing: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00eaff,
+                    #a855f7,
+                    #ff4ecd
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+
 
         .dream-brand p {
-            font-size: 13px;
-            letter-spacing: 2px;
-            opacity: 0.7;
+
+            margin-top: 8px;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            color: #aaa;
         }
 
+
         /* ===== MOBILE ===== */
+
         @media (max-width: 650px) {
 
             header h1 {
-                font-size: 36px;
+                font-size: 40px;
             }
 
             header p {
@@ -193,11 +398,10 @@
 
             section {
                 width: 92%;
-                padding: 40px 0;
             }
 
             section h2 {
-                font-size: 26px;
+                font-size: 27px;
             }
 
             .project-container {
@@ -207,40 +411,59 @@
             .about-box,
             .skill-box,
             .project {
-                padding: 22px;
+                padding: 25px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- ===== HEADER ===== -->
+
+    <!-- HEADER -->
+
     <header>
+
         <h1>Jeevitha</h1>
-        <p>Web Developer | IT Student</p>
+
+        <p>
+            Web Developer | IT Student
+        </p>
+
     </header>
 
 
-    <!-- ===== ABOUT ===== -->
+    <!-- ABOUT -->
+
     <section>
+
         <h2>About Me</h2>
 
         <div class="about-box">
+
             <p>
-                I am an Information Technology student passionate about
-                web development and modern technologies. I enjoy creating
-                responsive websites and learning new programming skills.
+                I am an Information Technology student
+                passionate about web development and
+                modern technologies. I enjoy creating
+                responsive websites and learning new
+                programming skills.
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- ===== SKILLS ===== -->
+    <!-- SKILLS -->
+
     <section>
+
         <h2>Technical Skills</h2>
 
         <div class="skill-box">
+
 
             <div class="skill">
                 <span>HTML</span>
@@ -248,7 +471,10 @@
             </div>
 
             <div class="bar">
-                <div class="progress" style="width: 85%;"></div>
+                <div
+                    class="progress"
+                    style="width:85%">
+                </div>
             </div>
 
 
@@ -258,7 +484,10 @@
             </div>
 
             <div class="bar">
-                <div class="progress" style="width: 80%;"></div>
+                <div
+                    class="progress"
+                    style="width:80%">
+                </div>
             </div>
 
 
@@ -268,7 +497,10 @@
             </div>
 
             <div class="bar">
-                <div class="progress" style="width: 75%;"></div>
+                <div
+                    class="progress"
+                    style="width:75%">
+                </div>
             </div>
 
 
@@ -278,7 +510,10 @@
             </div>
 
             <div class="bar">
-                <div class="progress" style="width: 70%;"></div>
+                <div
+                    class="progress"
+                    style="width:70%">
+                </div>
             </div>
 
 
@@ -288,7 +523,10 @@
             </div>
 
             <div class="bar">
-                <div class="progress" style="width: 65%;"></div>
+                <div
+                    class="progress"
+                    style="width:65%">
+                </div>
             </div>
 
 
@@ -298,58 +536,82 @@
             </div>
 
             <div class="bar">
-                <div class="progress" style="width: 40%;"></div>
+                <div
+                    class="progress"
+                    style="width:40%">
+                </div>
             </div>
 
+
         </div>
+
     </section>
 
 
-    <!-- ===== PROJECTS ===== -->
+    <!-- PROJECTS -->
+
     <section>
+
         <h2>Projects</h2>
+
 
         <div class="project-container">
 
-            <div class="project">
-                <h3>SafeNest AI</h3>
-                <p>
-                    AI Powered Women's Safety Smartwatch designed to
-                    provide emergency alerts and safety assistance.
-                </p>
-            </div>
 
             <div class="project">
-                <h3>Portfolio Website</h3>
+
+                <h3>SafeNest AI</h3>
+
                 <p>
-                    A personal portfolio website showcasing my skills,
-                    projects and technical interests.
+                    AI Powered Women's Safety
+                    Smartwatch designed to provide
+                    emergency alerts and safety assistance.
                 </p>
+
             </div>
+
+
+            <div class="project">
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    A personal portfolio website
+                    showcasing my skills, projects
+                    and technical interests.
+                </p>
+
+            </div>
+
 
         </div>
+
     </section>
 
 
-    <!-- ===== CONTACT ===== -->
+    <!-- CONTACT -->
+
     <section class="contact">
+
         <h2>Contact Me</h2>
 
         <p class="email">
             📧 sajeex07@gmail.com
         </p>
 
-        <a href="mailto:sajeex07@gmail.com?subject=Contact from Website">
-            <button>Contact Me</button>
+
+        <a
+            href="mailto:sajeex07@gmail.com?subject=Contact from Website">
+
+            <button>
+                Contact Me
+            </button>
+
         </a>
+
     </section>
 
 
-    <!-- ===== DREAM STARTUP ===== -->
-    <div class="dream-brand">
-        <h3>SAJEEX TECHNOLOGY</h3>
-        <p>MY DREAM STARTUP</p>
-    </div>
 
 </body>
 </html>
