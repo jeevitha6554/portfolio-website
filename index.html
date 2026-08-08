@@ -5,230 +5,339 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Jeevitha - Portfolio</title>
+    <title>Jeevitha | Portfolio</title>
 
     <style>
+        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background: #f5f7fb;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
             color: #222;
+            line-height: 1.6;
         }
 
-        /* Header */
+        /* ===== HEADER ===== */
         header {
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
             text-align: center;
-            padding: 50px 20px 30px;
+            padding: 70px 20px;
         }
 
         header h1 {
-            font-size: 38px;
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 10px;
         }
 
         header p {
-            font-size: 18px;
-            color: #666;
+            font-size: 19px;
+            opacity: 0.9;
         }
 
-        /* About */
-        .about {
-            max-width: 800px;
+        /* ===== COMMON SECTION ===== */
+        section {
+            width: 90%;
+            max-width: 900px;
             margin: auto;
-            padding: 30px 20px;
+            padding: 55px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #1d3557;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             text-align: center;
         }
 
-        .about h2,
-        .skills h2,
-        .projects h2,
-        .contact h2 {
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            line-height: 1.7;
+        .about-box p {
             color: #555;
+            font-size: 17px;
         }
 
-        /* Skills */
-        .skills {
-            max-width: 800px;
-            margin: auto;
-            padding: 30px 20px;
+        /* ===== SKILLS ===== */
+        .skill-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
 
         .skill {
-            margin: 15px 0 7px;
-            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-bottom: 7px;
+            font-weight: 600;
         }
 
         .bar {
             width: 100%;
             height: 12px;
-            background: #ddd;
-            border-radius: 10px;
+            background: #e2e6ec;
+            border-radius: 20px;
             overflow: hidden;
         }
 
         .progress {
             height: 100%;
-            background: #4f46e5;
-            border-radius: 10px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            border-radius: 20px;
         }
 
-        /* Projects */
-        .projects {
-            max-width: 800px;
-            margin: auto;
-            padding: 30px 20px;
+        /* ===== PROJECTS ===== */
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
         }
 
         .project {
             background: white;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-7px);
         }
 
         .project h3 {
-            margin-bottom: 8px;
+            color: #2563eb;
+            margin-bottom: 10px;
+            font-size: 21px;
         }
 
         .project p {
             color: #666;
         }
 
-        /* Contact */
+        /* ===== CONTACT ===== */
         .contact {
             text-align: center;
-            padding: 40px 20px;
         }
 
-        .contact p {
+        .email {
+            font-size: 17px;
             margin-bottom: 20px;
+            color: #555;
         }
 
-        button {
-            padding: 12px 25px;
+        .contact button {
             border: none;
-            border-radius: 6px;
-            background: #4f46e5;
+            padding: 13px 28px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
             color: white;
             font-size: 16px;
+            border-radius: 30px;
             cursor: pointer;
+            transition: 0.3s;
         }
 
-        button:hover {
-            opacity: 0.85;
+        .contact button:hover {
+            transform: scale(1.05);
         }
 
-        /* Dream Company */
+        /* ===== DREAM STARTUP ===== */
         .dream-brand {
             text-align: center;
-            padding: 35px 20px;
+            padding: 40px 20px;
             margin-top: 20px;
-            border-top: 1px solid #ddd;
+            background: #141e30;
+            color: white;
         }
 
         .dream-brand h3 {
-            font-size: 20px;
-            letter-spacing: 3px;
-            margin-bottom: 6px;
+            font-size: 22px;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
         }
 
         .dream-brand p {
             font-size: 13px;
-            color: #888;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            opacity: 0.7;
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 650px) {
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            section {
+                width: 92%;
+                padding: 40px 0;
+            }
+
+            section h2 {
+                font-size: 26px;
+            }
+
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-box,
+            .skill-box,
+            .project {
+                padding: 22px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- ===== HEADER ===== -->
     <header>
         <h1>Jeevitha</h1>
         <p>Web Developer | IT Student</p>
     </header>
 
 
-    <!-- About -->
-    <section class="about">
+    <!-- ===== ABOUT ===== -->
+    <section>
         <h2>About Me</h2>
 
-        <p>
-            I am an Information Technology student interested in
-            web development and modern technologies. I enjoy creating
-            user-friendly websites and learning new programming skills.
-        </p>
+        <div class="about-box">
+            <p>
+                I am an Information Technology student passionate about
+                web development and modern technologies. I enjoy creating
+                responsive websites and learning new programming skills.
+            </p>
+        </div>
     </section>
 
 
-    <!-- Skills -->
-    <section class="skills">
+    <!-- ===== SKILLS ===== -->
+    <section>
         <h2>Technical Skills</h2>
 
-        <div class="skill">HTML 85%</div>
-        <div class="bar">
-            <div class="progress" style="width:85%"></div>
-        </div>
+        <div class="skill-box">
 
-        <div class="skill">CSS 80%</div>
-        <div class="bar">
-            <div class="progress" style="width:80%"></div>
-        </div>
+            <div class="skill">
+                <span>HTML</span>
+                <span>85%</span>
+            </div>
 
-        <div class="skill">JavaScript 75%</div>
-        <div class="bar">
-            <div class="progress" style="width:75%"></div>
-        </div>
+            <div class="bar">
+                <div class="progress" style="width: 85%;"></div>
+            </div>
 
-        <div class="skill">React.js 70%</div>
-        <div class="bar">
-            <div class="progress" style="width:70%"></div>
-        </div>
 
-        <div class="skill">Node.js 65%</div>
-        <div class="bar">
-            <div class="progress" style="width:65%"></div>
-        </div>
+            <div class="skill">
+                <span>CSS</span>
+                <span>80%</span>
+            </div>
 
-        <div class="skill">Python (Learning) 40%</div>
-        <div class="bar">
-            <div class="progress" style="width:40%"></div>
+            <div class="bar">
+                <div class="progress" style="width: 80%;"></div>
+            </div>
+
+
+            <div class="skill">
+                <span>JavaScript</span>
+                <span>75%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress" style="width: 75%;"></div>
+            </div>
+
+
+            <div class="skill">
+                <span>React.js</span>
+                <span>70%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress" style="width: 70%;"></div>
+            </div>
+
+
+            <div class="skill">
+                <span>Node.js</span>
+                <span>65%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress" style="width: 65%;"></div>
+            </div>
+
+
+            <div class="skill">
+                <span>Python (Learning)</span>
+                <span>40%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress" style="width: 40%;"></div>
+            </div>
+
         </div>
     </section>
 
 
-    <!-- Projects -->
-    <section class="projects">
+    <!-- ===== PROJECTS ===== -->
+    <section>
         <h2>Projects</h2>
 
-        <div class="project">
-            <h3>SafeNest AI</h3>
-            <p>AI Powered Women's Safety Smartwatch.</p>
-        </div>
+        <div class="project-container">
 
-        <div class="project">
-            <h3>Portfolio Website</h3>
-            <p>Personal Portfolio Project.</p>
+            <div class="project">
+                <h3>SafeNest AI</h3>
+                <p>
+                    AI Powered Women's Safety Smartwatch designed to
+                    provide emergency alerts and safety assistance.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p>
+                    A personal portfolio website showcasing my skills,
+                    projects and technical interests.
+                </p>
+            </div>
+
         </div>
     </section>
 
 
-    <!-- Contact -->
+    <!-- ===== CONTACT ===== -->
     <section class="contact">
         <h2>Contact Me</h2>
 
-        <p>📧 sajeex07@gmail.com</p>
+        <p class="email">
+            📧 sajeex07@gmail.com
+        </p>
 
         <a href="mailto:sajeex07@gmail.com?subject=Contact from Website">
             <button>Contact Me</button>
@@ -236,10 +345,10 @@
     </section>
 
 
-    <!-- Dream Startup -->
+    <!-- ===== DREAM STARTUP ===== -->
     <div class="dream-brand">
         <h3>SAJEEX TECHNOLOGY</h3>
-        <p>My Dream Startup</p>
+        <p>MY DREAM STARTUP</p>
     </div>
 
 </body>
