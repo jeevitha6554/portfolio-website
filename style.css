@@ -1,7 +1,7 @@
 ```css
-/* =====================================================
+/* ==============================
    RESET
-===================================================== */
+================================ */
 
 * {
     margin: 0;
@@ -11,50 +11,72 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #ffffff;
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    overflow-x: hidden;
 
     background:
-        radial-gradient(circle at 10% 10%, #6d28d9 0%, transparent 30%),
-        radial-gradient(circle at 90% 20%, #0891b2 0%, transparent 30%),
-        linear-gradient(135deg, #080014, #16002b, #001b2b);
-
-    min-height: 100vh;
+        radial-gradient(
+            circle at 10% 10%,
+            #6d28d9 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            #0891b2 0%,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #080014,
+            #16002b,
+            #001b2b
+        );
 }
 
 
-/* =====================================================
+/* ==============================
    NAVBAR
-===================================================== */
+================================ */
 
 .navbar {
     width: 100%;
-    padding: 20px 8%;
+    min-height: 70px;
+
+    padding: 15px 6%;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    background: rgba(5, 5, 20, 0.80);
+    background: rgba(5, 5, 20, 0.9);
+
     backdrop-filter: blur(15px);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    border-bottom: 1px solid
+        rgba(255, 255, 255, 0.1);
 }
 
 
 /* Logo */
 
 .logo {
-    font-size: 25px;
+    font-size: 24px;
     font-weight: bold;
-    letter-spacing: 1px;
+
+    white-space: nowrap;
 
     background: linear-gradient(
         90deg,
@@ -72,20 +94,15 @@ body {
 
 .navbar nav {
     display: flex;
-    align-items: center;
-    gap: 28px;
+    gap: 25px;
 }
 
 .navbar nav a {
-    position: relative;
-
-    color: #ffffff;
+    color: white;
     text-decoration: none;
 
     font-size: 15px;
     font-weight: 600;
-
-    padding: 5px 0;
 
     transition: 0.3s;
 }
@@ -95,40 +112,13 @@ body {
 }
 
 
-/* Underline Animation */
-
-.navbar nav a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: -5px;
-
-    width: 0;
-    height: 2px;
-
-    background: linear-gradient(
-        90deg,
-        #00eaff,
-        #ff4ecd
-    );
-
-    transition: 0.3s;
-}
-
-.navbar nav a:hover::after {
-    width: 100%;
-}
-
-
-/* Hamburger Button */
+/* Menu button */
 
 .menu-btn {
     display: none;
 
-    background: transparent;
     border: none;
+    background: transparent;
 
     color: white;
 
@@ -138,29 +128,29 @@ body {
 }
 
 
-/* =====================================================
+/* ==============================
    HOME
-===================================================== */
+================================ */
 
 .home {
-    min-height: 90vh;
-
     width: 90%;
     max-width: 1100px;
+
+    min-height: 90vh;
 
     margin: auto;
 
     display: flex;
-
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
-    gap: 60px;
+    gap: 50px;
 }
 
 
 .home-text {
     flex: 1;
+    min-width: 0;
 }
 
 
@@ -169,14 +159,16 @@ body {
 
     font-size: 20px;
 
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 
 .home-text h1 {
-    font-size: 65px;
+    font-size: clamp(42px, 7vw, 65px);
 
     line-height: 1.1;
+
+    overflow-wrap: break-word;
 
     background: linear-gradient(
         90deg,
@@ -191,7 +183,7 @@ body {
 
 
 .home-text h2 {
-    font-size: 30px;
+    font-size: clamp(22px, 4vw, 30px);
 
     margin: 12px 0 18px;
 
@@ -207,12 +199,14 @@ body {
     font-size: 17px;
 
     line-height: 1.8;
+
+    overflow-wrap: break-word;
 }
 
 
-/* =====================================================
+/* ==============================
    BUTTON
-===================================================== */
+================================ */
 
 .btn {
     display: inline-block;
@@ -223,9 +217,9 @@ body {
 
     border-radius: 30px;
 
-    text-decoration: none;
+    color: white;
 
-    color: #ffffff;
+    text-decoration: none;
 
     font-weight: bold;
 
@@ -236,24 +230,21 @@ body {
         #ec4899
     );
 
-    box-shadow:
-        0 0 20px rgba(124, 58, 237, 0.5);
-
     transition: 0.3s;
 }
 
-
 .btn:hover {
-    transform: translateY(-4px) scale(1.04);
+    transform: translateY(-3px);
 
     box-shadow:
-        0 0 35px rgba(0, 234, 255, 0.6);
+        0 0 25px
+        rgba(0, 234, 255, 0.5);
 }
 
 
-/* =====================================================
+/* ==============================
    PROFILE PHOTO
-===================================================== */
+================================ */
 
 .home-photo {
     flex: 1;
@@ -262,66 +253,56 @@ body {
 
     justify-content: center;
     align-items: center;
+
+    min-width: 0;
 }
 
 
 .home-photo img {
-    width: 300px;
-    height: 300px;
+    width: min(300px, 70vw);
+    height: min(300px, 70vw);
+
+    max-width: 100%;
 
     object-fit: cover;
 
     border-radius: 50%;
 
-    border: 5px solid transparent;
-
-    background:
-        linear-gradient(#10001f, #10001f) padding-box,
-        linear-gradient(
-            135deg,
-            #00eaff,
-            #7c3aed,
-            #ff4ecd
-        ) border-box;
+    border: 5px solid #7c3aed;
 
     box-shadow:
-        0 0 25px rgba(0, 234, 255, 0.4),
-        0 0 60px rgba(168, 85, 247, 0.3);
+        0 0 30px
+        rgba(0, 234, 255, 0.5);
 
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 
 .home-photo img:hover {
-    transform: scale(1.05);
-
-    box-shadow:
-        0 0 40px rgba(0, 234, 255, 0.7),
-        0 0 80px rgba(236, 72, 153, 0.5);
+    transform: scale(1.04);
 }
 
 
-/* =====================================================
+/* ==============================
    COMMON SECTION
-===================================================== */
+================================ */
 
 .section {
     width: 90%;
-
     max-width: 1000px;
 
     margin: auto;
 
-    padding: 90px 0;
+    padding: 80px 0;
 }
 
 
 .section-title {
     text-align: center;
 
-    font-size: 35px;
+    font-size: clamp(28px, 6vw, 35px);
 
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 
     background: linear-gradient(
         90deg,
@@ -335,23 +316,24 @@ body {
 }
 
 
-/* =====================================================
+/* ==============================
    ABOUT
-===================================================== */
+================================ */
 
 .about-box {
-    padding: 35px;
+    width: 100%;
+
+    padding: 30px;
 
     border-radius: 20px;
 
-    background: rgba(255, 255, 255, 0.07);
+    background:
+        rgba(255, 255, 255, 0.07);
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
 
     backdrop-filter: blur(15px);
-
-    box-shadow:
-        0 0 30px rgba(124, 58, 237, 0.2);
 
     text-align: center;
 }
@@ -360,30 +342,36 @@ body {
 .about-box p {
     color: #d1d5db;
 
-    line-height: 1.9;
-
     font-size: 17px;
 
+    line-height: 1.8;
+
     margin-bottom: 15px;
+
+    overflow-wrap: break-word;
 }
 
 
-/* =====================================================
+/* ==============================
    SKILLS
-===================================================== */
+================================ */
 
 .skills-container {
+    width: 100%;
+
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 22px;
+    gap: 20px;
 }
 
 
 .skill-card {
-    padding: 28px 20px;
+    width: 100%;
+
+    padding: 25px 15px;
 
     text-align: center;
 
@@ -392,42 +380,37 @@ body {
     background:
         linear-gradient(
             145deg,
-            rgba(124, 58, 237, 0.20),
-            rgba(6, 182, 212, 0.10)
+            rgba(124, 58, 237, 0.2),
+            rgba(6, 182, 212, 0.1)
         );
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
 
-    backdrop-filter: blur(12px);
-
-    transition: 0.35s;
-
-    box-shadow:
-        0 0 20px rgba(124, 58, 237, 0.15);
+    transition: 0.3s;
 }
 
 
 .skill-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
 
     border-color: #00eaff;
 
     box-shadow:
-        0 0 30px rgba(0, 234, 255, 0.35);
+        0 0 25px
+        rgba(0, 234, 255, 0.3);
 }
 
 
 .skill-icon {
-    font-size: 35px;
+    font-size: 32px;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 
 .skill-card h3 {
-    font-size: 20px;
-
-    color: #ffffff;
+    font-size: 19px;
 
     margin-bottom: 6px;
 }
@@ -440,52 +423,56 @@ body {
 }
 
 
-/* =====================================================
+/* ==============================
    PROJECTS
-===================================================== */
+================================ */
 
 .projects-container {
+    width: 100%;
+
     display: grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 25px;
+    gap: 20px;
 }
 
 
 .project-card {
-    padding: 30px;
+    width: 100%;
+
+    padding: 28px;
 
     border-radius: 20px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(168, 85, 247, 0.20),
-            rgba(6, 182, 212, 0.10)
+            rgba(168, 85, 247, 0.2),
+            rgba(6, 182, 212, 0.1)
         );
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
 
-    backdrop-filter: blur(15px);
-
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-7px);
 
     box-shadow:
-        0 0 35px rgba(0, 234, 255, 0.3);
+        0 0 30px
+        rgba(0, 234, 255, 0.3);
 }
 
 
 .project-card h3 {
     color: #00eaff;
 
-    font-size: 23px;
+    font-size: 22px;
 
     margin-bottom: 12px;
 }
@@ -496,28 +483,35 @@ body {
 
     line-height: 1.7;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
+
+    overflow-wrap: break-word;
 }
 
 
 .project-card span {
     display: inline-block;
 
+    max-width: 100%;
+
     color: #e9d5ff;
 
-    font-size: 13px;
+    font-size: 12px;
 
     padding: 7px 12px;
 
     border-radius: 20px;
 
-    background: rgba(255, 255, 255, 0.08);
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    overflow-wrap: break-word;
 }
 
 
-/* =====================================================
+/* ==============================
    CONTACT
-===================================================== */
+================================ */
 
 .contact {
     text-align: center;
@@ -527,33 +521,38 @@ body {
 .contact > p {
     color: #d1d5db;
 
-    font-size: 18px;
+    font-size: 17px;
+
+    overflow-wrap: break-word;
 }
 
 
-/* =====================================================
+/* ==============================
    DREAM STARTUP
-===================================================== */
+================================ */
 
 .dream-brand {
+    width: 100%;
+
+    padding: 40px 15px;
+
     text-align: center;
 
-    padding: 45px 20px;
-
-    margin-top: 30px;
-
-    background: rgba(0, 0, 0, 0.3);
+    background:
+        rgba(0, 0, 0, 0.3);
 
     border-top:
         1px solid
-        rgba(255, 255, 255, 0.12);
+        rgba(255, 255, 255, 0.1);
 }
 
 
 .dream-brand h3 {
-    font-size: 24px;
+    font-size: clamp(18px, 5vw, 24px);
 
-    letter-spacing: 5px;
+    letter-spacing: 3px;
+
+    overflow-wrap: break-word;
 
     background: linear-gradient(
         90deg,
@@ -570,37 +569,28 @@ body {
 .dream-brand p {
     margin-top: 8px;
 
-    font-size: 12px;
+    font-size: 11px;
 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 
     color: #888;
 }
 
 
-/* =====================================================
+/* ==============================
    TABLET
-===================================================== */
+================================ */
 
 @media (max-width: 900px) {
 
     .navbar {
-        padding: 18px 5%;
+        padding: 15px 5%;
     }
 
     .home {
         width: 90%;
 
         gap: 30px;
-    }
-
-    .home-text h1 {
-        font-size: 52px;
-    }
-
-    .home-photo img {
-        width: 260px;
-        height: 260px;
     }
 
     .skills-container {
@@ -610,20 +600,18 @@ body {
 }
 
 
-/* =====================================================
+/* ==============================
    MOBILE
-===================================================== */
+================================ */
 
 @media (max-width: 750px) {
 
-    /* Navbar */
+    /* NAVBAR */
 
     .navbar {
-        padding: 18px 5%;
+        min-height: 65px;
 
-        flex-direction: row;
-
-        justify-content: space-between;
+        padding: 15px 5%;
     }
 
 
@@ -637,19 +625,19 @@ body {
 
         position: absolute;
 
-        top: 70px;
+        top: 65px;
         right: 5%;
 
-        width: 190px;
+        width: 180px;
+
+        padding: 8px;
 
         flex-direction: column;
 
         gap: 0;
 
-        padding: 10px;
-
         background:
-            rgba(10, 5, 25, 0.96);
+            rgba(10, 5, 25, 0.97);
 
         border:
             1px solid
@@ -658,10 +646,8 @@ body {
         border-radius: 15px;
 
         box-shadow:
-            0 15px 35px
+            0 15px 30px
             rgba(0, 0, 0, 0.5);
-
-        backdrop-filter: blur(15px);
     }
 
 
@@ -671,115 +657,78 @@ body {
 
 
     .navbar nav a {
-        padding: 13px;
-
         width: 100%;
 
-        text-align: center;
-    }
-
-
-    .navbar nav a::after {
-        display: none;
-    }
-
-
-    /* Home */
-
-    .home {
-        min-height: auto;
-
-        padding:
-            80px 0;
-
-        flex-direction: column-reverse;
+        padding: 13px 10px;
 
         text-align: center;
-    }
 
-
-    .home-text h1 {
-        font-size: 48px;
-    }
-
-
-    .home-text h2 {
-        font-size: 25px;
-    }
-
-
-    .home-text > p:not(.hello) {
         font-size: 15px;
     }
 
 
-    .home-photo img {
-        width: 230px;
-        height: 230px;
+    /* HOME */
+
+    .home {
+        width: 90%;
+
+        min-height: auto;
+
+        padding: 70px 0;
+
+        display: flex;
+
+        flex-direction: column-reverse;
+
+        text-align: center;
+
+        gap: 35px;
     }
 
 
-    /* Sections */
+    .home-text {
+        width: 100%;
+    }
+
+
+    .home-text > p:not(.hello) {
+        width: 100%;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .home-photo {
+        width: 100%;
+    }
+
+
+    /* SECTIONS */
 
     .section {
-        padding: 70px 0;
+        width: 90%;
+
+        padding: 65px 0;
     }
 
 
-    .section-title {
-        font-size: 30px;
-    }
-
-
-    /* Projects */
-
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media (max-width: 480px) {
-
-    .logo {
-        font-size: 21px;
-    }
-
-
-    .navbar nav {
-        width: 170px;
-    }
-
-
-    .home-text h1 {
-        font-size: 40px;
-    }
-
-
-    .home-text h2 {
-        font-size: 22px;
-    }
-
-
-    .home-photo img {
-        width: 200px;
-        height: 200px;
-    }
-
-
-    .section-title {
-        font-size: 27px;
-    }
-
+    /* SKILLS */
 
     .skills-container {
         grid-template-columns: 1fr;
     }
 
+
+    /* PROJECTS */
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ABOUT */
 
     .about-box {
         padding: 25px 20px;
@@ -789,16 +738,84 @@ body {
     .about-box p {
         font-size: 15px;
     }
+}
 
 
-    .project-card {
-        padding: 25px 20px;
+/* ==============================
+   SMALL PHONE
+================================ */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding:
+            14px 5%;
     }
 
 
-    .dream-brand h3 {
-        font-size: 19px;
-        letter-spacing: 3px;
+    .logo {
+        font-size: 20px;
+    }
+
+
+    .menu-btn {
+        font-size: 26px;
+    }
+
+
+    .home {
+        padding:
+            55px 0;
+    }
+
+
+    .home-photo img {
+        width: 190px;
+        height: 190px;
+    }
+
+
+    .home-text h1 {
+        font-size: 42px;
+    }
+
+
+    .home-text h2 {
+        font-size: 21px;
+    }
+
+
+    .hello {
+        font-size: 17px;
+    }
+
+
+    .btn {
+        padding:
+            12px 22px;
+
+        font-size: 14px;
+    }
+
+
+    .section-title {
+        font-size: 28px;
+    }
+
+
+    .skill-card {
+        padding: 22px 15px;
+    }
+
+
+    .project-card {
+        padding: 22px 18px;
+    }
+
+
+    .dream-brand {
+        padding:
+            35px 10px;
     }
 }
 ```
