@@ -1,7 +1,7 @@
 ```css
-/* ==============================
+/* =========================
    RESET
-================================ */
+========================= */
 
 * {
     margin: 0;
@@ -11,114 +11,89 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
     overflow-x: hidden;
 }
 
 body {
     width: 100%;
-    min-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
 
     font-family: Arial, sans-serif;
     color: white;
 
-    overflow-x: hidden;
-
-    background:
-        radial-gradient(
-            circle at 10% 10%,
-            #6d28d9 0%,
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 90% 20%,
-            #0891b2 0%,
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #080014,
-            #16002b,
-            #001b2b
-        );
+    background: linear-gradient(
+        135deg,
+        #080014,
+        #17002d,
+        #002b3d
+    );
 }
 
 
-/* ==============================
+/* =========================
    NAVBAR
-================================ */
+========================= */
 
 .navbar {
     width: 100%;
-    min-height: 70px;
+    min-height: 65px;
 
-    padding: 15px 6%;
+    padding: 15px 5%;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    background: rgba(5, 5, 20, 0.9);
-
-    backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid
-        rgba(255, 255, 255, 0.1);
+    background: rgba(8, 0, 20, 0.95);
 }
 
 
-/* Logo */
-
 .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
 
     white-space: nowrap;
 
-    background: linear-gradient(
-        90deg,
-        #00eaff,
-        #a855f7,
-        #ff4ecd
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #00eaff;
 }
 
-
-/* Navigation */
 
 .navbar nav {
     display: flex;
-    gap: 25px;
+    gap: 22px;
 }
+
 
 .navbar nav a {
     color: white;
+
     text-decoration: none;
 
     font-size: 15px;
-    font-weight: 600;
 
     transition: 0.3s;
 }
+
 
 .navbar nav a:hover {
     color: #00eaff;
 }
 
 
-/* Menu button */
+/* MENU BUTTON */
 
 .menu-btn {
     display: none;
 
     border: none;
-    background: transparent;
+
+    background: none;
 
     color: white;
 
@@ -128,9 +103,9 @@ body {
 }
 
 
-/* ==============================
+/* =========================
    HOME
-================================ */
+========================= */
 
 .home {
     width: 90%;
@@ -141,151 +116,118 @@ body {
     margin: auto;
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 40px;
 }
 
 
 .home-text {
-    flex: 1;
-    min-width: 0;
+    width: 55%;
 }
 
 
 .hello {
     color: #00eaff;
 
-    font-size: 20px;
+    font-size: 19px;
 
     margin-bottom: 10px;
 }
 
 
 .home-text h1 {
-    font-size: clamp(42px, 7vw, 65px);
+    font-size: 60px;
 
-    line-height: 1.1;
+    line-height: 1.2;
 
-    overflow-wrap: break-word;
+    color: #ffffff;
 
-    background: linear-gradient(
-        90deg,
-        #00eaff,
-        #a855f7,
-        #ff4ecd
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    word-break: normal;
 }
 
 
 .home-text h2 {
-    font-size: clamp(22px, 4vw, 30px);
+    font-size: 28px;
 
-    margin: 12px 0 18px;
+    margin: 10px 0 15px;
 
-    color: #e9d5ff;
+    color: #c084fc;
 }
 
 
 .home-text > p:not(.hello) {
     max-width: 600px;
 
-    color: #d1d5db;
+    font-size: 16px;
 
-    font-size: 17px;
+    line-height: 1.7;
 
-    line-height: 1.8;
-
-    overflow-wrap: break-word;
+    color: #dddddd;
 }
 
-
-/* ==============================
-   BUTTON
-================================ */
 
 .btn {
     display: inline-block;
 
-    margin-top: 25px;
+    margin-top: 22px;
 
-    padding: 13px 28px;
+    padding: 12px 25px;
 
-    border-radius: 30px;
-
-    color: white;
+    border-radius: 25px;
 
     text-decoration: none;
 
-    font-weight: bold;
+    color: white;
 
     background: linear-gradient(
         90deg,
         #06b6d4,
-        #7c3aed,
-        #ec4899
+        #7c3aed
     );
 
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 0 25px
-        rgba(0, 234, 255, 0.5);
+    font-weight: bold;
 }
 
 
-/* ==============================
-   PROFILE PHOTO
-================================ */
+/* =========================
+   PHOTO
+========================= */
 
 .home-photo {
-    flex: 1;
+    width: 45%;
 
     display: flex;
 
     justify-content: center;
-    align-items: center;
 
-    min-width: 0;
+    align-items: center;
 }
 
 
 .home-photo img {
-    width: min(300px, 70vw);
-    height: min(300px, 70vw);
+    width: 280px;
+    height: 280px;
 
-    max-width: 100%;
+    max-width: 80vw;
+    max-height: 80vw;
 
     object-fit: cover;
 
     border-radius: 50%;
 
-    border: 5px solid #7c3aed;
+    border: 4px solid #8b5cf6;
 
     box-shadow:
-        0 0 30px
-        rgba(0, 234, 255, 0.5);
-
-    transition: 0.3s;
+        0 0 30px #7c3aed;
 }
 
 
-.home-photo img:hover {
-    transform: scale(1.04);
-}
-
-
-/* ==============================
-   COMMON SECTION
-================================ */
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
     width: 90%;
@@ -293,68 +235,55 @@ body {
 
     margin: auto;
 
-    padding: 80px 0;
+    padding: 70px 0;
 }
 
 
 .section-title {
     text-align: center;
 
-    font-size: clamp(28px, 6vw, 35px);
+    font-size: 32px;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 
-    background: linear-gradient(
-        90deg,
-        #00eaff,
-        #a855f7,
-        #ff4ecd
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #00eaff;
 }
 
 
-/* ==============================
+/* =========================
    ABOUT
-================================ */
+========================= */
 
 .about-box {
     width: 100%;
 
     padding: 30px;
 
-    border-radius: 20px;
+    text-align: center;
 
-    background:
-        rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.08);
 
     border: 1px solid
-        rgba(255, 255, 255, 0.15);
-
-    backdrop-filter: blur(15px);
-
-    text-align: center;
+        rgba(255,255,255,0.15);
 }
 
 
 .about-box p {
-    color: #d1d5db;
+    color: #dddddd;
 
-    font-size: 17px;
+    font-size: 16px;
 
     line-height: 1.8;
 
     margin-bottom: 15px;
-
-    overflow-wrap: break-word;
 }
 
 
-/* ==============================
+/* =========================
    SKILLS
-================================ */
+========================= */
 
 .skills-container {
     width: 100%;
@@ -375,35 +304,28 @@ body {
 
     text-align: center;
 
-    border-radius: 18px;
+    border-radius: 15px;
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(124, 58, 237, 0.2),
-            rgba(6, 182, 212, 0.1)
-        );
+        rgba(255,255,255,0.08);
 
-    border: 1px solid
-        rgba(255, 255, 255, 0.15);
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
 
     transition: 0.3s;
 }
 
 
 .skill-card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-5px);
 
     border-color: #00eaff;
-
-    box-shadow:
-        0 0 25px
-        rgba(0, 234, 255, 0.3);
 }
 
 
 .skill-icon {
-    font-size: 32px;
+    font-size: 30px;
 
     margin-bottom: 10px;
 }
@@ -412,20 +334,20 @@ body {
 .skill-card h3 {
     font-size: 19px;
 
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 
 .skill-card p {
-    color: #aaa;
-
     font-size: 14px;
+
+    color: #aaaaaa;
 }
 
 
-/* ==============================
+/* =========================
    PROJECTS
-================================ */
+========================= */
 
 .projects-container {
     width: 100%;
@@ -442,30 +364,16 @@ body {
 .project-card {
     width: 100%;
 
-    padding: 28px;
+    padding: 25px;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(168, 85, 247, 0.2),
-            rgba(6, 182, 212, 0.1)
-        );
+        rgba(255,255,255,0.08);
 
-    border: 1px solid
-        rgba(255, 255, 255, 0.15);
-
-    transition: 0.3s;
-}
-
-
-.project-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 0 30px
-        rgba(0, 234, 255, 0.3);
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
 }
 
 
@@ -479,13 +387,11 @@ body {
 
 
 .project-card p {
-    color: #d1d5db;
+    color: #dddddd;
 
     line-height: 1.7;
 
     margin-bottom: 15px;
-
-    overflow-wrap: break-word;
 }
 
 
@@ -494,75 +400,60 @@ body {
 
     max-width: 100%;
 
-    color: #e9d5ff;
+    padding: 6px 10px;
+
+    border-radius: 15px;
 
     font-size: 12px;
 
-    padding: 7px 12px;
-
-    border-radius: 20px;
+    color: #c084fc;
 
     background:
-        rgba(255, 255, 255, 0.08);
-
-    overflow-wrap: break-word;
+        rgba(255,255,255,0.08);
 }
 
 
-/* ==============================
+/* =========================
    CONTACT
-================================ */
+========================= */
 
 .contact {
     text-align: center;
 }
 
 
-.contact > p {
-    color: #d1d5db;
+.contact p {
+    color: #dddddd;
 
-    font-size: 17px;
+    font-size: 16px;
 
-    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 
-/* ==============================
+/* =========================
    DREAM STARTUP
-================================ */
+========================= */
 
 .dream-brand {
     width: 100%;
 
-    padding: 40px 15px;
+    padding: 35px 10px;
 
     text-align: center;
 
-    background:
-        rgba(0, 0, 0, 0.3);
-
     border-top:
         1px solid
-        rgba(255, 255, 255, 0.1);
+        rgba(255,255,255,0.1);
 }
 
 
 .dream-brand h3 {
-    font-size: clamp(18px, 5vw, 24px);
+    font-size: 22px;
 
-    letter-spacing: 3px;
+    color: #00eaff;
 
-    overflow-wrap: break-word;
-
-    background: linear-gradient(
-        90deg,
-        #00eaff,
-        #a855f7,
-        #ff4ecd
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    word-break: break-word;
 }
 
 
@@ -573,24 +464,27 @@ body {
 
     letter-spacing: 2px;
 
-    color: #888;
+    color: #888888;
 }
 
 
-/* ==============================
+/* =========================
    TABLET
-================================ */
+========================= */
 
-@media (max-width: 900px) {
-
-    .navbar {
-        padding: 15px 5%;
-    }
+@media (max-width: 850px) {
 
     .home {
-        width: 90%;
+        gap: 25px;
+    }
 
-        gap: 30px;
+    .home-text h1 {
+        font-size: 48px;
+    }
+
+    .home-photo img {
+        width: 240px;
+        height: 240px;
     }
 
     .skills-container {
@@ -600,17 +494,15 @@ body {
 }
 
 
-/* ==============================
-   MOBILE
-================================ */
+/* =========================
+   PHONE
+========================= */
 
-@media (max-width: 750px) {
+@media (max-width: 650px) {
 
     /* NAVBAR */
 
     .navbar {
-        min-height: 65px;
-
         padding: 15px 5%;
     }
 
@@ -630,24 +522,19 @@ body {
 
         width: 180px;
 
-        padding: 8px;
+        padding: 10px;
 
         flex-direction: column;
 
         gap: 0;
 
-        background:
-            rgba(10, 5, 25, 0.97);
+        background: #10051d;
+
+        border-radius: 12px;
 
         border:
             1px solid
-            rgba(255, 255, 255, 0.15);
-
-        border-radius: 15px;
-
-        box-shadow:
-            0 15px 30px
-            rgba(0, 0, 0, 0.5);
+            rgba(255,255,255,0.2);
     }
 
 
@@ -657,13 +544,13 @@ body {
 
 
     .navbar nav a {
+        display: block;
+
         width: 100%;
 
-        padding: 13px 10px;
+        padding: 12px;
 
         text-align: center;
-
-        font-size: 15px;
     }
 
 
@@ -674,20 +561,28 @@ body {
 
         min-height: auto;
 
-        padding: 70px 0;
-
-        display: flex;
+        padding: 60px 0;
 
         flex-direction: column-reverse;
 
         text-align: center;
-
-        gap: 35px;
     }
 
 
     .home-text {
         width: 100%;
+    }
+
+
+    .home-text h1 {
+        font-size: 42px;
+
+        line-height: 1.2;
+    }
+
+
+    .home-text h2 {
+        font-size: 22px;
     }
 
 
@@ -700,8 +595,20 @@ body {
     }
 
 
+    /* PHOTO */
+
     .home-photo {
         width: 100%;
+    }
+
+
+    .home-photo img {
+        width: 210px;
+
+        height: 210px;
+
+        max-width: 70vw;
+        max-height: 70vw;
     }
 
 
@@ -710,7 +617,12 @@ body {
     .section {
         width: 90%;
 
-        padding: 65px 0;
+        padding: 60px 0;
+    }
+
+
+    .section-title {
+        font-size: 28px;
     }
 
 
@@ -731,91 +643,63 @@ body {
     /* ABOUT */
 
     .about-box {
-        padding: 25px 20px;
+        padding: 25px 18px;
     }
 
 
     .about-box p {
         font-size: 15px;
     }
-}
 
 
-/* ==============================
-   SMALL PHONE
-================================ */
-
-@media (max-width: 480px) {
-
-    .navbar {
-        padding:
-            14px 5%;
-    }
-
-
-    .logo {
-        font-size: 20px;
-    }
-
-
-    .menu-btn {
-        font-size: 26px;
-    }
-
-
-    .home {
-        padding:
-            55px 0;
-    }
-
-
-    .home-photo img {
-        width: 190px;
-        height: 190px;
-    }
-
-
-    .home-text h1 {
-        font-size: 42px;
-    }
-
-
-    .home-text h2 {
-        font-size: 21px;
-    }
-
-
-    .hello {
-        font-size: 17px;
-    }
-
-
-    .btn {
-        padding:
-            12px 22px;
-
-        font-size: 14px;
-    }
-
-
-    .section-title {
-        font-size: 28px;
-    }
-
-
-    .skill-card {
-        padding: 22px 15px;
-    }
-
+    /* PROJECT */
 
     .project-card {
         padding: 22px 18px;
     }
+}
 
 
-    .dream-brand {
-        padding:
-            35px 10px;
+/* =========================
+   VERY SMALL PHONE
+========================= */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 19px;
+    }
+
+
+    .home {
+        width: 92%;
+    }
+
+
+    .home-text h1 {
+        font-size: 36px;
+    }
+
+
+    .home-text h2 {
+        font-size: 20px;
+    }
+
+
+    .home-photo img {
+        width: 180px;
+
+        height: 180px;
+    }
+
+
+    .section {
+        width: 92%;
+    }
+
+
+    .section-title {
+        font-size: 25px;
     }
 }
 ```
