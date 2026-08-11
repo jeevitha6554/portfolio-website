@@ -27,7 +27,7 @@
 
 /* =====================================================
    BODY
-   SOFT COLORFUL AURORA BACKGROUND
+   GREEN + YELLOW + ORANGE AURORA
 ===================================================== */
 
 body {
@@ -44,29 +44,29 @@ body {
 
         radial-gradient(
             circle at 15% 20%,
-            rgba(139, 92, 246, 0.45),
+            rgba(34, 197, 94, 0.48),
             transparent 32%
         ),
 
         radial-gradient(
             circle at 85% 20%,
-            rgba(6, 182, 212, 0.35),
+            rgba(250, 204, 21, 0.42),
             transparent 32%
         ),
 
         radial-gradient(
             circle at 75% 80%,
-            rgba(236, 72, 153, 0.35),
+            rgba(249, 115, 22, 0.40),
             transparent 32%
         ),
 
         radial-gradient(
             circle at 20% 85%,
-            rgba(59, 130, 246, 0.35),
+            rgba(16, 185, 129, 0.42),
             transparent 32%
         ),
 
-        #080b1a;
+        #07130d;
 
     background-size: 140% 140%;
 
@@ -75,8 +75,8 @@ body {
 
 
 /* =====================================================
-   AURORA MOVEMENT
-   VERY SLOW - NO FLASHING
+   BACKGROUND MOVEMENT
+   SLOW - NO FLASHING
 ===================================================== */
 
 @keyframes auroraMove {
@@ -138,7 +138,7 @@ header {
 
 
 /* =====================================================
-   SOFT DECORATIVE GLOW
+   SOFT GREEN GLOW
 ===================================================== */
 
 header::before {
@@ -153,7 +153,7 @@ header::before {
 
     border-radius: 50%;
 
-    background: rgba(139, 92, 246, 0.15);
+    background: rgba(34, 197, 94, 0.16);
 
     filter: blur(90px);
 
@@ -164,6 +164,10 @@ header::before {
     pointer-events: none;
 }
 
+
+/* =====================================================
+   SOFT ORANGE GLOW
+===================================================== */
 
 header::after {
 
@@ -177,7 +181,7 @@ header::after {
 
     border-radius: 50%;
 
-    background: rgba(6, 182, 212, 0.12);
+    background: rgba(249, 115, 22, 0.14);
 
     filter: blur(90px);
 
@@ -205,7 +209,7 @@ header::after {
 
 /* =====================================================
    PROFILE IMAGE
-   STATIC - NO FLOATING
+   STATIC
 ===================================================== */
 
 .profile img {
@@ -229,24 +233,24 @@ header::after {
 
 /* =====================================================
    PHOTO HOVER
-   ONLY GLOW + SMALL ZOOM
+   GLOW ONLY
 ===================================================== */
 
 .profile img:hover {
 
     transform: scale(1.04);
 
-    border-color: #d8b4fe;
+    border-color: #fde68a;
 
     box-shadow:
 
-        0 0 15px rgba(192, 132, 252, 0.9),
+        0 0 15px rgba(250, 204, 21, 0.9),
 
-        0 0 35px rgba(168, 85, 247, 0.7),
+        0 0 35px rgba(34, 197, 94, 0.75),
 
-        0 0 60px rgba(34, 211, 238, 0.5),
+        0 0 60px rgba(249, 115, 22, 0.55),
 
-        0 0 90px rgba(236, 72, 153, 0.35);
+        0 0 90px rgba(255, 255, 255, 0.25);
 }
 
 
@@ -282,7 +286,7 @@ header::after {
 
         0 0 15px rgba(255, 255, 255, 0.25),
 
-        0 0 30px rgba(168, 85, 247, 0.25);
+        0 0 30px rgba(34, 197, 94, 0.30);
 }
 
 
@@ -294,7 +298,7 @@ header::after {
 
     font-size: 25px;
 
-    color: #e9d5ff;
+    color: #fef3c7;
 
     margin-bottom: 20px;
 
@@ -311,7 +315,7 @@ header::after {
 
     font-size: 18px;
 
-    color: #e2e8f0;
+    color: #ecfdf5;
 
     margin-bottom: 30px;
 
@@ -329,14 +333,17 @@ header::after {
 
     text-decoration: none;
 
-    color: white;
+    color: #ffffff;
 
     background: linear-gradient(
         135deg,
-        #6366f1,
-        #8b5cf6,
-        #ec4899
+        #16a34a,
+        #22c55e,
+        #eab308,
+        #f97316
     );
+
+    background-size: 200% 200%;
 
     padding: 13px 30px;
 
@@ -359,11 +366,13 @@ header::after {
 
     transform: translateY(-5px) scale(1.05);
 
+    background-position: 100% 50%;
+
     box-shadow:
 
-        0 0 20px rgba(139, 92, 246, 0.8),
+        0 0 20px rgba(250, 204, 21, 0.75),
 
-        0 0 40px rgba(236, 72, 153, 0.45);
+        0 0 40px rgba(34, 197, 94, 0.55);
 }
 
 
@@ -378,7 +387,6 @@ section {
     text-align: center;
 
     background: transparent;
-
 }
 
 
@@ -421,9 +429,9 @@ section {
 
     background: linear-gradient(
         90deg,
-        #22d3ee,
-        #8b5cf6,
-        #ec4899
+        #22c55e,
+        #facc15,
+        #f97316
     );
 
     transition: 0.4s;
@@ -437,7 +445,7 @@ section {
     left: 0;
 
     box-shadow:
-        0 0 15px rgba(139, 92, 246, 0.8);
+        0 0 15px rgba(250, 204, 21, 0.7);
 }
 
 
@@ -450,16 +458,16 @@ section {
 .project,
 .contact {
 
-    background: rgba(15, 23, 42, 0.38);
+    background: rgba(3, 20, 12, 0.42);
 
     backdrop-filter: blur(12px);
 
     -webkit-backdrop-filter: blur(12px);
 
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
+        0 10px 30px rgba(0, 0, 0, 0.28);
 }
 
 
@@ -479,7 +487,7 @@ section {
 
     font-size: 18px;
 
-    color: #e2e8f0;
+    color: #ecfdf5;
 
     transition: 0.5s;
 }
@@ -489,11 +497,11 @@ section {
 
     transform: translateY(-10px);
 
-    border-color: rgba(192, 132, 252, 0.7);
+    border-color: rgba(134, 239, 172, 0.75);
 
     box-shadow:
 
-        0 0 25px rgba(139, 92, 246, 0.3),
+        0 0 25px rgba(34, 197, 94, 0.30),
 
         0 20px 45px rgba(0, 0, 0, 0.3);
 }
@@ -525,7 +533,7 @@ section {
 
     font-weight: bold;
 
-    color: #ddd6fe;
+    color: #dcfce7;
 
     cursor: pointer;
 
@@ -533,26 +541,30 @@ section {
 }
 
 
+/* =====================================================
+   SKILL HOVER
+===================================================== */
+
 .skill-box:hover {
 
     transform: translateY(-10px) scale(1.05);
 
     background: linear-gradient(
         135deg,
-        rgba(99, 102, 241, 0.9),
-        rgba(139, 92, 246, 0.9),
-        rgba(236, 72, 153, 0.85)
+        rgba(22, 163, 74, 0.95),
+        rgba(234, 179, 8, 0.90),
+        rgba(249, 115, 22, 0.90)
     );
 
     color: white;
 
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.6);
 
     box-shadow:
 
-        0 0 20px rgba(139, 92, 246, 0.6),
+        0 0 20px rgba(34, 197, 94, 0.55),
 
-        0 15px 30px rgba(0, 0, 0, 0.25);
+        0 0 35px rgba(250, 204, 21, 0.35);
 }
 
 
@@ -584,7 +596,7 @@ section {
 }
 
 
-/* Project top line */
+/* Project Top Line */
 
 .project::before {
 
@@ -598,9 +610,9 @@ section {
 
     background: linear-gradient(
         90deg,
-        #22d3ee,
-        #8b5cf6,
-        #ec4899
+        #22c55e,
+        #facc15,
+        #f97316
     );
 
     top: 0;
@@ -621,11 +633,11 @@ section {
 
     transform: translateY(-12px);
 
-    border-color: rgba(192, 132, 252, 0.7);
+    border-color: rgba(250, 204, 21, 0.65);
 
     box-shadow:
 
-        0 0 25px rgba(139, 92, 246, 0.35),
+        0 0 25px rgba(34, 197, 94, 0.35),
 
         0 20px 45px rgba(0, 0, 0, 0.3);
 }
@@ -635,19 +647,18 @@ section {
 
     font-size: 28px;
 
-    color: #d8b4fe;
+    color: #fde68a;
 
     margin-bottom: 15px;
 
     text-shadow:
-        0 0 12px rgba(192, 132, 252, 0.3);
+        0 0 12px rgba(250, 204, 21, 0.30);
 }
 
 
 .project p {
 
-    color: #e2e8f0;
-
+    color: #ecfdf5;
 }
 
 
@@ -657,7 +668,7 @@ section {
 
 section:nth-of-type(4) .about {
 
-    border-left: 5px solid #22d3ee;
+    border-left: 5px solid #22c55e;
 
     transition: 0.5s;
 }
@@ -665,7 +676,7 @@ section:nth-of-type(4) .about {
 
 section:nth-of-type(4) .about:hover {
 
-    border-left: 12px solid #ec4899;
+    border-left: 12px solid #f97316;
 
     transform: translateX(8px);
 }
@@ -693,11 +704,11 @@ section:nth-of-type(4) .about:hover {
 
     transform: translateY(-8px);
 
-    border-color: rgba(192, 132, 252, 0.7);
+    border-color: rgba(250, 204, 21, 0.7);
 
     box-shadow:
 
-        0 0 25px rgba(139, 92, 246, 0.35),
+        0 0 25px rgba(34, 197, 94, 0.35),
 
         0 20px 45px rgba(0, 0, 0, 0.3);
 }
@@ -707,7 +718,7 @@ section:nth-of-type(4) .about:hover {
 
     font-size: 17px;
 
-    color: #e2e8f0;
+    color: #ecfdf5;
 
     margin-bottom: 15px;
 }
@@ -725,11 +736,11 @@ section:nth-of-type(4) .about:hover {
 
 footer {
 
-    background: rgba(2, 6, 23, 0.55);
+    background: rgba(3, 15, 9, 0.60);
 
     backdrop-filter: blur(10px);
 
-    color: #e2e8f0;
+    color: #ecfdf5;
 
     text-align: center;
 
@@ -743,10 +754,10 @@ footer {
 
 footer:hover {
 
-    color: #d8b4fe;
+    color: #fde68a;
 
     text-shadow:
-        0 0 10px rgba(192, 132, 252, 0.5);
+        0 0 10px rgba(250, 204, 21, 0.5);
 }
 
 
@@ -791,7 +802,7 @@ footer:hover {
 
 
 /* =====================================================
-   RESPONSIVE - TABLET
+   TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
@@ -821,7 +832,7 @@ footer:hover {
 
 
 /* =====================================================
-   RESPONSIVE - MOBILE
+   MOBILE
 ===================================================== */
 
 @media (max-width: 600px) {
@@ -955,7 +966,7 @@ footer:hover {
 
 
 <!-- =====================================================
-     ABOUT
+     ABOUT ME
 ===================================================== -->
 
 <section>
@@ -1198,7 +1209,7 @@ footer:hover {
 
 <footer>
 
-    Designed & Developed by Jeevitha 💙
+    Designed & Developed by Jeevitha 💚
 
 </footer>
 
